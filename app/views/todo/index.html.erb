@@ -1,31 +1,17 @@
 
 <h1 >To do list</h1>
-       
        <ol>
-        <li>
-            <input type="checkbox"><a href ="show/1"></a>Do chores for mom 3 pomodoros 
-            <a href="file_show.html">Edit</a>
-            <a href="file_show.html">Delete</a>
-        </li> 
-        <li>
-            <input type="checkbox"><a href ="show/2"></a>Do homeowrk 4 pomodors 
-            <a href="file_show.html">Edit</a>
-            <a href="file_show.html">Delete</a>
-        </li>
-        <li>
-           <input type="checkbox"><a href ="show/3"></a> Clean room 2 pomodors 
-            <a href="file_show.html">Edit</a> 
-            <a href="file_show.html">Delete</a>
-        </li>
-        <li>
-           <input type="checkbox"><a href ="show/4"></a> GO to grocery store 2 pomodoros
-            <a href="file_show.html">Edit</a> 
-            <a href="file_show.html">Delete</a>
-        </li>
-        Add Task   
+        <% @todos.each do |todo| %>
+            <li>
+                <input type="checkbox">
+                 <a href="todo/show/<%= todo.id %>"><%= todo.description %></a>
+              <span class="pomodoro-estimate small-pomodoro-estimate"><%= todo.pomodoro_estimate %></span>
+            </li> 
+        
+        <% end %>
+           
         </ol>
         <input type="text" placeholder="New task">
         <input type="number" placeholder="Number of pomodoros">
         <h1>Example HTML Document with Ruby</h1>
 <p>Let's do some math</p>
-4 + 3 = <%= 4+3 %>
